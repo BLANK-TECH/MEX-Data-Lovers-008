@@ -1,6 +1,5 @@
 
 let data = window.POKEMON.pokemon;
-let google = window.google;
 let labelOrdenar = document.getElementById("ordenar-por");
 let pantallaPrincipal = document.getElementById("pantalla-principal");
 let mostrar = document.getElementById('pantalla-principal');
@@ -155,7 +154,7 @@ let seccionEstadistica = document.getElementById("pantalla-estadistica");
       <p>de tipo ${condicion} es ${porcentajeTipo} %</p>`;
 
       //aqui empieza el codigo para los graficos
-      google.charts.load('current', {'packages':['corechart']});
+      /*google.charts.load('current', {'packages':['corechart']});
       google.charts.setOnLoadCallback(drawChart);
 
       function drawChart() {
@@ -173,7 +172,7 @@ let seccionEstadistica = document.getElementById("pantalla-estadistica");
         var chart = new google.visualization.PieChart(document.getElementById('piechart'));
 
         chart.draw(data, options);
-      }
+      }*/
       //Oculta la pantalla Tipos
       pantallaTipos.style.display = "none";
       //Imprime los pokemon por tipo
@@ -216,7 +215,7 @@ let seccionEstadistica = document.getElementById("pantalla-estadistica");
        //aqui empieza el codigo para los graficos
       
 
-      function drawChart() {
+      /*function drawChart() {
         var data = google.visualization.arrayToDataTable([
           ['Debilidad', 'Porcentaje'],
           [condicion, resultado.length],
@@ -231,7 +230,7 @@ let seccionEstadistica = document.getElementById("pantalla-estadistica");
         chart.draw(data, options);
       }
       google.charts.load('current', {'packages':['corechart']});
-      google.charts.setOnLoadCallback(drawChart);
+      google.charts.setOnLoadCallback(drawChart);*/
       // Oculta la pantalla Tipos
       pantallaDebilidad.style.display = "none";
       pantallaPrintDebilidad.style.display= "block";

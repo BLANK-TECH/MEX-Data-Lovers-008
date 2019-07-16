@@ -45,11 +45,15 @@ filterByWeaknesses : (data,condicion) => {
 
 //Funcion datos curiosos
 estadistica : (data,propiedad) => {
+  let nuevaData=[];
   //el mas pesado y el mas alto
-  if(propiedad === "weight" || propiedad === "height"){
-    let result = data.sort((a,b) => (a[propiedad] > b[propiedad] ? -1 : 1));
-    let primero = result.shift();
-    return (primero);
+  if(propiedad === "weight"){
+    data.forEach(element => {
+      //peso = parseInt(element.weight);
+      nuevaData.push(element); 
+    });
+    nuevaData.sort((a,b) => (a[(propiedad)] > b[(propiedad)] ? -1 : 1));
+    return (nuevaData[0]);
   }
   //promedio de candy_count para evolucionar
   else if(propiedad === "candy_count"){
