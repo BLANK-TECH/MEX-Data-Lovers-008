@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 const pokemon = require('../src/data.js');
-const dataMock = {
-"pokemonUno":[
+const testData = {
+"pokemon":[
     {
       "id": 1,
     "num": "001",
@@ -79,7 +79,8 @@ describe("pokemon.filterByType", () => {
     expect(window.pokemon.filterByType([]) instanceof Array).toBe(true);
   });
   it("debería retornar un arreglo con el objeto de Bulbasaur", () => {
-    expect(window.pokemon.filterByType(dataMock.pokemonUno,"Grass")).toEqual([dataMock.pokemon[0]]);
+    const dataMock = [ ...testData.pokemon ];
+    expect(window.pokemon.filterByType(dataMock,"Grass")).toEqual([testData.pokemon[0]]);
   });
 });
 
@@ -91,7 +92,8 @@ describe("pokemon.filterByWeaknesses", () => {
     expect(window.pokemon.filterByWeaknesses([])instanceof Array).toBe(true);
   });
     it("debería retornar un arreglo con el objeto de Charizard", () => {
-      expect(window.pokemon.filterByWeaknesses(dataMock.pokemonUno,"Electric")).toEqual([dataMock.pokemonUno[2]]);
+      const dataMock = [ ...testData.pokemon ];
+      expect(window.pokemon.filterByWeaknesses(dataMock,"Electric")).toEqual([testData.pokemon[2]]);
     });
   });
 
@@ -100,13 +102,16 @@ describe("pokemon.filterByWeaknesses", () => {
       expect(typeof window.pokemon.estadistica).toBe("function");
   });
     it("debería retornar el pokemon mas pesado", () => {
-    expect(window.pokemon.estadistica(dataMock.pokemonUno,"weight")).toEqual(dataMock.pokemonUno[2]);
+    const dataMock = [ ...testData.pokemon ];
+    expect(window.pokemon.estadistica(dataMock,"weight")).toEqual(testData.pokemon[2]);
   });
     it("debería retornar el pokemon mas alto", () => {
-    expect (window.pokemon.estadistica(dataMock.pokemonUno,"height")).toEqual([dataMock.pokemonUno[2]]);
+    const dataMock = [ ...testData.pokemon ];
+    expect (window.pokemon.estadistica(dataMock,"height")).toEqual(testData.pokemon[2]);
   });
   it("debería retornar el promedio de candy count", () => {
-      expect (window.pokemon.estadistica(dataMock.pokemonUno, "candy_count")).toBe(20);
+      const dataMock = [ ...testData.pokemon ];
+      expect (window.pokemon.estadistica(dataMock, "candy_count")).toBe(20);
     });
 });
 
